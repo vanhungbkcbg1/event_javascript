@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="jquery.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+        $("button").click(function () {
+            alert('click function');
+            $(this).trigger('myevent','abc');
+        });
+    });
+
+    $(document).on('myevent','button', function (event,param) {
+
+        alert('my event'+param.toString());
+    });
+</script>
+<button >Click</button>
+</body>
+</html>
